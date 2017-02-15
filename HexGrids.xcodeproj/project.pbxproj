@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0452A191E50C9D600B75343 /* HexGrids.h in Headers */ = {isa = PBXBuildFile; fileRef = D0452A171E50C9D600B75343 /* HexGrids.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0452A201E50CA6700B75343 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0452A1F1E50CA6700B75343 /* Hex.swift */; };
+		D0452A221E50E11000B75343 /* HexTileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0452A211E50E11000B75343 /* HexTileProvider.swift */; };
+		D0452A401E50F43700B75343 /* HexGridsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0452A3F1E50F43700B75343 /* HexGridsTests.swift */; };
+		D0452A421E50F43700B75343 /* HexGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0452A141E50C9D600B75343 /* HexGrids.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0452A431E50F43700B75343 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0452A0B1E50C9D600B75343 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0452A131E50C9D600B75343;
+			remoteInfo = HexGrids;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0452A141E50C9D600B75343 /* HexGrids.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexGrids.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0452A171E50C9D600B75343 /* HexGrids.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HexGrids.h; sourceTree = "<group>"; };
+		D0452A181E50C9D600B75343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0452A1F1E50CA6700B75343 /* Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		D0452A211E50E11000B75343 /* HexTileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexTileProvider.swift; sourceTree = "<group>"; };
+		D0452A3D1E50F43700B75343 /* HexGridsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexGridsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0452A3F1E50F43700B75343 /* HexGridsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexGridsTests.swift; sourceTree = "<group>"; };
+		D0452A411E50F43700B75343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0452A101E50C9D600B75343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0452A3A1E50F43700B75343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0452A421E50F43700B75343 /* HexGrids.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0452A0A1E50C9D600B75343 = {
+			isa = PBXGroup;
+			children = (
+				D0452A161E50C9D600B75343 /* HexGrids */,
+				D0452A3E1E50F43700B75343 /* HexGridsTests */,
+				D0452A151E50C9D600B75343 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0452A151E50C9D600B75343 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0452A141E50C9D600B75343 /* HexGrids.framework */,
+				D0452A3D1E50F43700B75343 /* HexGridsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0452A161E50C9D600B75343 /* HexGrids */ = {
+			isa = PBXGroup;
+			children = (
+				D0452A1F1E50CA6700B75343 /* Hex.swift */,
+				D0452A211E50E11000B75343 /* HexTileProvider.swift */,
+				D0452A171E50C9D600B75343 /* HexGrids.h */,
+				D0452A181E50C9D600B75343 /* Info.plist */,
+			);
+			path = HexGrids;
+			sourceTree = "<group>";
+		};
+		D0452A3E1E50F43700B75343 /* HexGridsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0452A3F1E50F43700B75343 /* HexGridsTests.swift */,
+				D0452A411E50F43700B75343 /* Info.plist */,
+			);
+			path = HexGridsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D0452A111E50C9D600B75343 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0452A191E50C9D600B75343 /* HexGrids.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D0452A131E50C9D600B75343 /* HexGrids */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0452A1C1E50C9D600B75343 /* Build configuration list for PBXNativeTarget "HexGrids" */;
+			buildPhases = (
+				D0452A0F1E50C9D600B75343 /* Sources */,
+				D0452A101E50C9D600B75343 /* Frameworks */,
+				D0452A111E50C9D600B75343 /* Headers */,
+				D0452A121E50C9D600B75343 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HexGrids;
+			productName = HexGrids;
+			productReference = D0452A141E50C9D600B75343 /* HexGrids.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0452A3C1E50F43700B75343 /* HexGridsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0452A451E50F43700B75343 /* Build configuration list for PBXNativeTarget "HexGridsTests" */;
+			buildPhases = (
+				D0452A391E50F43700B75343 /* Sources */,
+				D0452A3A1E50F43700B75343 /* Frameworks */,
+				D0452A3B1E50F43700B75343 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0452A441E50F43700B75343 /* PBXTargetDependency */,
+			);
+			name = HexGridsTests;
+			productName = HexGridsTests;
+			productReference = D0452A3D1E50F43700B75343 /* HexGridsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0452A0B1E50C9D600B75343 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mountain Buffalo Limited";
+				TargetAttributes = {
+					D0452A131E50C9D600B75343 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = YYCKCW8QEN;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					D0452A3C1E50F43700B75343 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = YYCKCW8QEN;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D0452A0E1E50C9D600B75343 /* Build configuration list for PBXProject "HexGrids" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0452A0A1E50C9D600B75343;
+			productRefGroup = D0452A151E50C9D600B75343 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0452A131E50C9D600B75343 /* HexGrids */,
+				D0452A3C1E50F43700B75343 /* HexGridsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0452A121E50C9D600B75343 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0452A3B1E50F43700B75343 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0452A0F1E50C9D600B75343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0452A221E50E11000B75343 /* HexTileProvider.swift in Sources */,
+				D0452A201E50CA6700B75343 /* Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0452A391E50F43700B75343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0452A401E50F43700B75343 /* HexGridsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0452A441E50F43700B75343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0452A131E50C9D600B75343 /* HexGrids */;
+			targetProxy = D0452A431E50F43700B75343 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D0452A1A1E50C9D600B75343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D0452A1B1E50C9D600B75343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D0452A1D1E50C9D600B75343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YYCKCW8QEN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HexGrids/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mountainbuffalo.HexGrids;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D0452A1E1E50C9D600B75343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YYCKCW8QEN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HexGrids/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mountainbuffalo.HexGrids;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D0452A461E50F43700B75343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YYCKCW8QEN;
+				INFOPLIST_FILE = HexGridsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mountainbuffalo.HexGridsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D0452A471E50F43700B75343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YYCKCW8QEN;
+				INFOPLIST_FILE = HexGridsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mountainbuffalo.HexGridsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0452A0E1E50C9D600B75343 /* Build configuration list for PBXProject "HexGrids" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0452A1A1E50C9D600B75343 /* Debug */,
+				D0452A1B1E50C9D600B75343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0452A1C1E50C9D600B75343 /* Build configuration list for PBXNativeTarget "HexGrids" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0452A1D1E50C9D600B75343 /* Debug */,
+				D0452A1E1E50C9D600B75343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0452A451E50F43700B75343 /* Build configuration list for PBXNativeTarget "HexGridsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0452A461E50F43700B75343 /* Debug */,
+				D0452A471E50F43700B75343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0452A0B1E50C9D600B75343 /* Project object */;
+}
