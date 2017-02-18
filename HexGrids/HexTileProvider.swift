@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 func randomInt(_ min: Int, _ max: Int) -> Int {
     if min >= 0 {
         return Int(arc4random_uniform(UInt32(abs(max) - min + 1))) + abs(min)
@@ -26,7 +27,7 @@ public class HexTileProvider<T> {
     
     public typealias GenerationElementHandler = ((HexCube) -> Element)
     
-    var tiles: [HexCube: Element]
+    private var tiles: [HexCube: Element]
     public let layout: HexLayout
     public let radius: Int
     public let mapSize: CGSize
@@ -35,28 +36,19 @@ public class HexTileProvider<T> {
     public let lazyGeneration: Bool
     
     public var tileTotalCount: Int {
-        return ((radius * (radius + 1)) / 2) * 6 + 1
+        return (3 * radius) * (radius - 1) + 1
     }
     
     public var size: CGSize {
-        if tileOrientation == .pointyTop {
-            let height = ((tileSize) + (tileSize * Double(radius) + ((0.5 * tileSize) * Double(radius)))) * 2
-            let tileWidth = tileSize * 2.0
-            let width = (((sqrt(3.0)/2.0 * tileWidth) / 2) + ((sqrt(3.0)/2.0 * tileWidth) * Double(radius))) * 2
-            return CGSize(width: width, height: height)
-
-        } else {
-            let width = ((tileSize) + (tileSize * Double(radius) + ((0.5 * tileSize) * Double(radius)))) * 2
-            let tileWidth = tileSize * 2.0
-            let height = (((sqrt(3.0)/2.0 * tileWidth) / 2) + ((sqrt(3.0)/2.0 * tileWidth) * Double(radius))) * 2
-            return CGSize(width: width, height: height)
-        }
+        let width = 2 * (tileSize + (1.5 * tileSize * Double(radius)))
+        let height = 2 * (((sqrt(3) * tileSize) / 2) + (sqrt(3) * tileSize * Double(radius)))
+        return CGSize(width: tileOrientation == .pointyTop ? height : width, height: tileOrientation == .pointyTop ? width : height)
     }
     
     public convenience init(mapSize: CGSize, frameSize: CGSize, layout: HexLayout = .hexagon, tileOrientation: HexOrientation = .pointyTop, lazyGeneration: Bool = false) {
         //((minSize / radius) / (1 + sqrt(3))) / 2
-        let minSize = min(frameSize.width, frameSize.height)
-        let tileSize = ((Double(minSize) / Double(mapSize.width)) / 2.732050807568877) / 2.0
+        let minSize = Double(min(frameSize.width, frameSize.height))
+        let tileSize = minSize / (3.squareRoot() * (2 * Double(mapSize.width) + 1))
         
         self.init(mapSize: mapSize, tileSize: tileSize, layout: layout, tileOrientation: tileOrientation, lazyGeneration: lazyGeneration)
     }
@@ -102,11 +94,10 @@ public class HexTileProvider<T> {
         let random3 = 0 - tempSum
         
         if random3 > max || random3 < min {
-            fatalError("Something when bad")
+            fatalError("Something went bad")
         } else {
             return HexCube(x: random1, y: random2, z: random3, size: tileSize, orientation: tileOrientation)
         }
-        
     }
     
     public func tile(at pixel: CGPoint) -> (HexCube, Element?) {
@@ -116,6 +107,21 @@ public class HexTileProvider<T> {
     
     public func tile(at hex: HexCube) -> Element? {
         return tiles[hex]
+    }
+    
+    public subscript(key: HexCube) -> Element? {
+        
+        get {
+            return tiles[key]
+        }
+        
+        set {
+            if let value = newValue {
+                self.add(at: key, element: value)
+            } else {
+                self.move(from: key, to: nil)
+            }
+        }
     }
     
     public func add(at hex: HexCube, element: Element) {
@@ -155,14 +161,12 @@ public class HexTileProvider<T> {
             return
         }
         
-        defer {
-            tiles[from] = nil
-            print("clearing {\(from.x), \(from.y), \(from.z)}")
+        guard let fromValue = tiles.removeValue(forKey: from) else {
+            return
         }
         
         if let destination = to {
-            tiles[destination] = tiles[from]
-            print("Moving from {\(from.x), \(from.y), \(from.z)} to {\(destination.x), \(destination.y), \(destination.z)}")
+            tiles[destination] = fromValue
         }
     }
 

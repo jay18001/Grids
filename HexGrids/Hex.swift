@@ -97,12 +97,16 @@ public enum HexDirection {
     
 }
 
-public struct HexCube: Hashable {
+public struct HexCube: Hashable, CustomStringConvertible {
     public let x: Int
     public let y: Int
     public let z: Int
     public let orientation: HexOrientation
     public let size: Double
+    
+    public var description: String {
+        return "(\(self.x),\(self.y),\(self.z))"
+    }
     
     public var hashValue: Int {
         return "\(self.x),\(self.y),\(self.z),\(self.orientation),\(self.size)".hashValue
