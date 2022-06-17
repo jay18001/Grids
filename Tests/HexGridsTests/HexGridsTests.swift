@@ -31,7 +31,7 @@ class HexTileProviderTests: XCTestCase {
     
     func testTileAtHex() {
         
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0)
         
         tilesProvider.generate { (hex) -> TestHex in
             print(hex.x, hex.y, hex.z)
@@ -46,7 +46,7 @@ class HexTileProviderTests: XCTestCase {
     }
     
     func testTileAtPoint() {
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0)
         
         tilesProvider.generate { (hex) -> TestHex in
             print(hex.x, hex.y, hex.z)
@@ -63,7 +63,7 @@ class HexTileProviderTests: XCTestCase {
     }
     
     func testSubscript() {
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
         
         let hex = HexCube(x: 3, y: 0, z: -3, size: 10.0)
         
@@ -80,7 +80,7 @@ class HexTileProviderTests: XCTestCase {
     
     func testTileAtHexLazyGerneration() {
         
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
         
         let hex = HexCube(x: 3, y: 0, z: -3, size: 10.0)
 
@@ -92,7 +92,7 @@ class HexTileProviderTests: XCTestCase {
     
     func testTileAtPointLazyGerneration() {
         
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
         
         let hex = HexCube(x: 1, y: 0, z: -1, size: 10.0)
         
@@ -105,19 +105,19 @@ class HexTileProviderTests: XCTestCase {
     }
     
     func testTotalCount() {
-        let tilesProvider: HexTileProvider<TestHex>  = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
+        let tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), tileSize: 10.0, lazyGeneration: true)
         XCTAssertEqual(tilesProvider.tileTotalCount, 37)
     }
     
     func testProviderSize() {
         let frameSize = CGSize(width: 100, height: 100)
         var tilesProvider: HexTileProvider<TestHex> = HexTileProvider(mapSize: CGSize(width: 4, height: 4), frameSize: frameSize, lazyGeneration: true)
-        XCTAssertEqualWithAccuracy(frameSize.width, tilesProvider.size.width, accuracy: 0.001)
-        XCTAssertEqualWithAccuracy(tilesProvider.size.height, 89.8100, accuracy: 0.0001)
+        XCTAssertEqual(frameSize.width, tilesProvider.size.width, accuracy: 0.001)
+        XCTAssertEqual(tilesProvider.size.height, 89.8100, accuracy: 0.0001)
         
         tilesProvider = HexTileProvider(mapSize: CGSize(width: 4, height: 4), frameSize: frameSize, tileOrientation: .flatTop, lazyGeneration: true)
-        XCTAssertEqualWithAccuracy(tilesProvider.size.width, 89.8100, accuracy: 0.001)
-        XCTAssertEqualWithAccuracy(tilesProvider.size.height, frameSize.height, accuracy: 0.001)
+        XCTAssertEqual(tilesProvider.size.width, 89.8100, accuracy: 0.001)
+        XCTAssertEqual(tilesProvider.size.height, frameSize.height, accuracy: 0.001)
     }
     
     func testRandomTile() {

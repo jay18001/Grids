@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreGraphics
 
-func +(lhs: HexCube, rhs: HexCube) -> HexCube {
+public func +(lhs: HexCube, rhs: HexCube) -> HexCube {
     return HexCube(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z, size: lhs.size, orientation: lhs.orientation)
 }
 
@@ -20,12 +21,18 @@ public func ==(lhs: HexCube, rhs: HexCube) -> Bool {
         lhs.size == rhs.size)
 }
 
-public enum HexOrientation {
+public func ==(lhs: HexCube, rhs: (x: Int, y: Int, z: Int)) -> Bool {
+    return (lhs.x == rhs.x &&
+        lhs.y == rhs.y &&
+        lhs.z == rhs.z)
+}
+
+public enum HexOrientation: String, Codable {
     case flatTop
     case pointyTop
 }
 
-public enum HexDirection {
+public enum HexDirection: String, Codable {
     case top
     case topLeft
     case topRight
@@ -97,7 +104,7 @@ public enum HexDirection {
     
 }
 
-public struct HexCube: Hashable, CustomStringConvertible {
+public struct HexCube: Hashable, CustomStringConvertible, Codable {
     public let x: Int
     public let y: Int
     public let z: Int
@@ -108,10 +115,11 @@ public struct HexCube: Hashable, CustomStringConvertible {
         return "(\(self.x),\(self.y),\(self.z))"
     }
     
-    public var hashValue: Int {
-        return "\(self.x),\(self.y),\(self.z),\(self.orientation),\(self.size)".hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.x)
+        hasher.combine(self.y)
+        hasher.combine(self.z)
     }
-    
     
     var q: Int {
         return self.x

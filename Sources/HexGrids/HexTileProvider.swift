@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreGraphics
 
 func randomInt(_ min: Int, _ max: Int) -> Int {
     if min >= 0 {
@@ -18,7 +18,7 @@ func randomInt(_ min: Int, _ max: Int) -> Int {
     }
 }
 
-public enum HexLayout {
+public enum HexLayout: String, Codable {
     case hexagon
 }
 
@@ -27,16 +27,22 @@ public class HexTileProvider<T> {
     
     public typealias GenerationElementHandler = ((HexCube) -> Element)
     
-    private var tiles: [HexCube: Element]
+    public var tiles: [HexCube: Element]
     public let layout: HexLayout
     public let radius: Int
     public let mapSize: CGSize
     public let tileSize: Double
     public let tileOrientation: HexOrientation
     public let lazyGeneration: Bool
+    public var frameSize: CGSize
     
     public var tileTotalCount: Int {
+        let radius = self.radius + 1
         return (3 * radius) * (radius - 1) + 1
+    }
+    
+    public var tileCount: Int {
+        return tiles.count
     }
     
     public var size: CGSize {
@@ -46,11 +52,11 @@ public class HexTileProvider<T> {
     }
     
     public convenience init(mapSize: CGSize, frameSize: CGSize, layout: HexLayout = .hexagon, tileOrientation: HexOrientation = .pointyTop, lazyGeneration: Bool = false) {
-        //((minSize / radius) / (1 + sqrt(3))) / 2
         let minSize = Double(min(frameSize.width, frameSize.height))
         let tileSize = minSize / (3.squareRoot() * (2 * Double(mapSize.width) + 1))
         
         self.init(mapSize: mapSize, tileSize: tileSize, layout: layout, tileOrientation: tileOrientation, lazyGeneration: lazyGeneration)
+        self.frameSize = frameSize
     }
     
     public init(mapSize: CGSize, tileSize: Double, layout: HexLayout = .hexagon, tileOrientation: HexOrientation = .pointyTop, lazyGeneration: Bool = false) {
@@ -62,6 +68,7 @@ public class HexTileProvider<T> {
         self.tileSize = tileSize
         self.tileOrientation = tileOrientation
         self.lazyGeneration = lazyGeneration
+        self.frameSize = .zero
     }
     
     public func generate(elementHandler: GenerationElementHandler) {
@@ -72,8 +79,6 @@ public class HexTileProvider<T> {
         switch layout {
         case .hexagon:
             generateHexagon(elementHandler: elementHandler)
-        default:
-            break
         }
     }
     
@@ -191,5 +196,9 @@ public class HexTileProvider<T> {
         }
         
         return results
+    }
+    
+    public func empty() {
+        self.tiles = [:]
     }
 }
